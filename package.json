@@ -1,0 +1,23 @@
+{
+  "name": "react-template",
+  "version": "0.1.0",
+  "description": "A starting point for React/Flux apps with web services, authentication, routing and unit testing.",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmascenik/react-template.git"
+  },
+  "keywords": [
+    "react",
+    "flux"
+  ],
+  "author": "Dan Mascenik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmascenik/react-template/issues"
+  },
+  "homepage": "https://github.com/dmascenik/react-template#readme"
+}
