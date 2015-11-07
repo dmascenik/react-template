@@ -1,3 +1,14 @@
 plugins {
   id "com.moowork.node" version "0.10"
 }
+
+task clean(type: Delete) {
+  description 'Deletes the build directory'
+  delete 'build'
+}
+
+task compile(type: NpmTask) {
+    args = ['run', 'compile']
+
+}
+compile.dependsOn npmInstall

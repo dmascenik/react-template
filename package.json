@@ -4,7 +4,7 @@
   "description": "A starting point for React/Flux apps with web services, authentication, routing and unit testing.",
   "main": "index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "babel src --out-dir build/js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/dmascenik/react-template/issues"
   },
-  "homepage": "https://github.com/dmascenik/react-template#readme"
+  "homepage": "https://github.com/dmascenik/react-template#readme",
+  "dependencies": {
+    "react": "^0.14.2"
+  },
+  "devDependencies": {
+    "babel": "^5.8.29"
+  }
 }
