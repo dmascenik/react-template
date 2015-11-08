@@ -26,4 +26,13 @@ describe('HelloWorld', () => {
       assert.equal(ReactDOM.findDOMNode(hello).style.color, "blue");
     });
 
+    it('Turns red on click', () => {
+      hello = jsx.renderComponent(HelloWorld, {});
+      assert(!ReactDOM.findDOMNode(hello).style.color, "Unexpected color in style");
+      jsx.simulateEvent(hello, 'click');
+      assert.equal(ReactDOM.findDOMNode(hello).style.color, "red");
+      jsx.simulateEvent(hello, 'click');
+      assert(!ReactDOM.findDOMNode(hello).style.color, "Color should have been cleared");
+    });
+
 });

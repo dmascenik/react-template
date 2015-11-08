@@ -4,13 +4,39 @@ import Radium from 'radium';
 var styles = {
   basic: {
     fontFamily: "Arial"
+  },
+  fancy: {
+    color: "red",
+    fontWeight: "bold"
   }
 };
 
 class HelloWorld extends React.Component {
-
+  
   constructor(props) {
     super(props);
+
+    /* 
+     * This makes HelloWorld a stateful component. When this.state
+     * is changed via this.setState(...), the component will re-render.
+     */
+    this.state = {
+      fancy: false
+    }
+
+    /*
+     * onClick function must be bound to work
+     */
+    this.onClick = this.onClick.bind(this);
+  }
+
+  /**
+   * onClick just toggles the "fancy" boolean in the state. Notice that you
+   * must use this.setState. Setting this.state directly will not trigger
+   * re-rendering.
+   */
+  onClick() {
+    this.setState({ fancy: !this.state.fancy });
   }
 
   render() {
@@ -20,9 +46,10 @@ class HelloWorld extends React.Component {
      * ensure that the later styles can't be overridden.
      */
     return (
-      <div style={[
+      <div style={[styles.basic, 
         this.props.style && this.props.style,
-        styles.basic]}>Hello World!</div>
+        this.state.fancy && styles.fancy]} 
+        onClick={this.onClick}>Hello World!</div>
     );
   }
 
