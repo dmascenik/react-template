@@ -2,3 +2,7 @@
 build/
 node_modules/
 *.sublime-*
+.DS_Store
+*~
+.*~
+*.log

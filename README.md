@@ -5,8 +5,8 @@ A starting point for React/Flux apps with web services, authentication, routing 
 
 ## Requires
 
-- node (tested with v0.10)
-- npm (tested with v2.14.4)
+- node (tested with v4.2.1)
+- npm (tested with v2.14.7)
 - gradle (tested with v2.7)
 
 ## Building
