@@ -9,6 +9,10 @@ task clean(type: Delete) {
 
 task compile(type: NpmTask) {
     args = ['run', 'compile']
-
 }
 compile.dependsOn npmInstall
+
+task run(type: NpmTask) {
+  args = ['run', 'start']
+}
+run.dependsOn compile

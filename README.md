@@ -12,3 +12,10 @@ A starting point for React/Flux apps with web services, authentication, routing 
 ## Building
 
 **Compile:** `gradle compile`
+
+Transpiles all ES6 and JSX code into plain JavaScript.
+
+
+**Run:** `gradle run`
+
+Launches a server on localhost:8080 with hot-loading enabled.
