@@ -4,14 +4,26 @@ var ReactDOM = require('react-dom');
 
 describe('HelloWorld', () => {
     var HelloWorld = require('../../src/components/HelloWorld.jsx');
+    var hello;
+
+    afterEach(() => {
+      if (hello) {
+        jsx.unmountComponent(hello);
+      }
+    })
 
     it('#render', () => {
       jsx.assertRender(HelloWorld, {}, 'Hello World!');
     });
 
     it('Renders with Arial font', () => {
-      var hello = jsx.renderComponent(HelloWorld, {});
+      hello = jsx.renderComponent(HelloWorld, {});
       assert.equal(ReactDOM.findDOMNode(hello).style.fontFamily, "Arial");
+    });
+
+    it('Accepts style override', () => {
+      hello = jsx.renderComponent(HelloWorld, {style: {"color": "blue"}});
+      assert.equal(ReactDOM.findDOMNode(hello).style.color, "blue");
     });
 
 });
