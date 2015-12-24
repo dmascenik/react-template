@@ -12,7 +12,17 @@ task compile(type: NpmTask) {
 }
 compile.dependsOn npmInstall
 
+task devtest(type: NpmTask) {
+    args = ['run', 'devtest']
+}
+devtest.dependsOn compile
+
 task run(type: NpmTask) {
   args = ['run', 'start']
 }
-run.dependsOn compile
+run.dependsOn devtest
+
+task test(type: NpmTask) {
+    args = ['run', 'test']
+}
+test.dependsOn compile
