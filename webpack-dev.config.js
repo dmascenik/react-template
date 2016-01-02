@@ -7,6 +7,8 @@ var path = require('path');
  */
 module.exports = {
 
+  devtool: "eval-sourcemaps",
+
   /*
    * This relies on the webpack-dev-server to publish live code updates
    * to an HTTP server at localhost:9090
