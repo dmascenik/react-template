@@ -1,22 +1,22 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 var styles = {
   basic: {
-    fontFamily: "Arial"
+    fontFamily: 'Arial'
   },
   fancy: {
-    color: "red",
-    fontWeight: "bold"
+    color: 'red',
+    fontWeight: 'bold'
   }
-};
+}
 
-class HelloWorld extends React.Component {
-  
-  constructor(props) {
-    super(props);
+let HelloWorld = class HelloWorld extends React.Component {
 
-    /* 
+  constructor (props) {
+    super(props)
+
+    /*
      * This makes HelloWorld a stateful component. When this.state
      * is changed via this.setState(...), the component will re-render.
      */
@@ -27,7 +27,7 @@ class HelloWorld extends React.Component {
     /*
      * onClick function must be bound to work
      */
-    this.onClick = this.onClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   /**
@@ -35,32 +35,32 @@ class HelloWorld extends React.Component {
    * must use this.setState. Setting this.state directly will not trigger
    * re-rendering.
    */
-  onClick() {
-    this.setState({ fancy: !this.state.fancy });
+  handleClick () {
+    this.setState({ fancy: !this.state.fancy })
   }
 
-  render() {
-
+  render () {
     /*
      * Note that by putting any styles coming in from props first, we can
      * ensure that the later styles can't be overridden.
      */
     return (
-      <div style={[styles.basic, 
-        this.props.style && this.props.style,
-        this.state.fancy && styles.fancy]} 
-        onClick={this.onClick}>Hello World!</div>
-    );
+      <div onClick={this.handleClick}
+          style={[styles.basic,
+          this.props.style && this.props.style,
+          this.state.fancy && styles.fancy]}>{'Hello World!'}</div>
+    )
   }
 
-};
+}
+HelloWorld.displayName = 'HelloWorld'
 
 /**
  * Do some basic property type checking
  */
 HelloWorld.propTypes = {
-  style:    React.PropTypes.object
-};
+  style: React.PropTypes.shape({'*': React.PropTypes.string})
+}
 
-HelloWorld = Radium(HelloWorld);
-export default HelloWorld;
+HelloWorld = Radium(HelloWorld)
+export default HelloWorld
