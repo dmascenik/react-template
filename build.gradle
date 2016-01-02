@@ -7,15 +7,26 @@ task clean(type: Delete) {
   delete 'build'
 }
 
+task lint(type: NpmTask) {
+    args = ['run', 'eslint']
+}
+lint.dependsOn npmInstall
+
+task lintTests(type: NpmTask) {
+    args = ['run', 'eslint-tests']
+}
+lintTests.dependsOn npmInstall
+
 task compile(type: NpmTask) {
     args = ['run', 'compile']
 }
-compile.dependsOn npmInstall
+compile.dependsOn lint
 
 task devtest(type: NpmTask) {
     args = ['run', 'devtest']
 }
 devtest.dependsOn compile
+devtest.dependsOn lintTests
 
 task run(type: NpmTask) {
   args = ['run', 'start']
@@ -26,3 +37,4 @@ task test(type: NpmTask) {
     args = ['run', 'test']
 }
 test.dependsOn compile
+test.dependsOn lintTests
