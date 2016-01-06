@@ -3,27 +3,28 @@ plugins {
 }
 
 task clean(type: Delete) {
-  description 'Deletes the build directory'
+  description 'Deletes the build and node_modules directories for a fresh start'
+  delete 'node_modules'
   delete 'build'
 }
 
 task lint(type: NpmTask) {
-    args = ['run', 'eslint']
+  args = ['run', 'eslint']
 }
 lint.dependsOn npmInstall
 
 task lintTests(type: NpmTask) {
-    args = ['run', 'eslint-tests']
+  args = ['run', 'eslint-tests']
 }
 lintTests.dependsOn npmInstall
 
 task compile(type: NpmTask) {
-    args = ['run', 'compile']
+  args = ['run', 'compile']
 }
 compile.dependsOn lint
 
 task devtest(type: NpmTask) {
-    args = ['run', 'devtest']
+  args = ['run', 'devtest']
 }
 devtest.dependsOn compile
 devtest.dependsOn lintTests
@@ -34,7 +35,12 @@ task run(type: NpmTask) {
 run.dependsOn devtest
 
 task test(type: NpmTask) {
-    args = ['run', 'test']
+  args = ['run', 'test']
 }
 test.dependsOn compile
 test.dependsOn lintTests
+
+task check(type: NpmTask) {
+  args = ['run', 'check']
+}
+check.dependsOn test

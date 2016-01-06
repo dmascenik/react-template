@@ -25,7 +25,12 @@ Transpiles all ES6 and JSX code into plain JavaScript.
 
 **Test:** `gradle test`
 
-Runs all the unit tests and generates test coverage reports.
+Runs all the unit tests and generates test coverage reports
+
+
+**Check Test Coverage:** `gradle check`
+
+Same as `gradle test`, but also checks test coverage against the global threshold in `.istanbul.yml`
 
 
 **Quick Test:** `gradle devtest`
