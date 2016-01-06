@@ -27,9 +27,11 @@
   },
   "homepage": "https://github.com/dmascenik/react-template#readme",
   "dependencies": {
+    "material-ui": "^0.14.1",
     "radium": "^0.14.3",
     "react": "^0.14.2",
-    "react-dom": "^0.14.2"
+    "react-dom": "^0.14.2",
+    "react-tap-event-plugin": "^0.2.1"
   },
   "devDependencies": {
     "babel": "^5.8.29",

@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import injectTapEventPlugin from 'react-tap-event-plugin'
 import HelloWorld from './components/HelloWorld.jsx'
+
+injectTapEventPlugin()
 
 /*
  * Look at the style attribute in HelloWorld.jsx's render() function to
