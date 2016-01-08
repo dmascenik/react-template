@@ -1,21 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import HelloWorld from './components/HelloWorld.jsx'
+import MyFirstSPA from './app/MyFirstSPA.jsx'
 
 injectTapEventPlugin()
 
-/*
- * Look at the style attribute in HelloWorld.jsx's render() function to
- * understand why the fontSize is overridden from here, but the
- * fontFamily is not - or why the color doesn't override the bold/red
- * style.
- */
-ReactDOM.render(<HelloWorld style={
-  {
-    'fontSize': '50px',
-    'color': 'blue',
-    'fontFamily': 'Times'
-  }
-} />,
-document.getElementById('app')) // <-- see static/index.html
+ReactDOM.render(<MyFirstSPA />, document.getElementById('app'))

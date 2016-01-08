@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/dmascenik/react-template#readme",
   "dependencies": {
+    "material-design-icons": "^2.1.3",
     "material-ui": "^0.14.1",
     "radium": "^0.14.3",
     "react": "^0.14.2",
