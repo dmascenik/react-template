@@ -8,8 +8,7 @@ import ReactDOM from 'react-dom'
  * a specific location in the app.
  */
 import { Router, IndexRoute, Route } from 'react-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
-const history = createBrowserHistory()
+import history from './history'
 
 import MasterFrame from './app/MasterFrame.jsx'
 import Home from './app/Home.jsx'

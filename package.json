@@ -7,9 +7,9 @@
     "eslint": "eslint -c eslint.config src --ext .js,.jsx",
     "eslint-tests": "eslint -c eslint-tests.config test --ext .js,.jsx",
     "compile": "babel src --out-dir build/js",
-    "test": "COVERAGE=true ARTIFACTS_DIR=./build/reports jenkins-mocha test/**/*.js*",
+    "test": "COVERAGE=true ARTIFACTS_DIR=./build/reports jenkins-mocha --compilers js:babel-core/register test/**/*.js*",
     "check": "istanbul check-coverage",
-    "devtest": "ARTIFACTS_DIR=./build/reports jenkins-mocha --no-coverage test/**/*.js*",
+    "devtest": "ARTIFACTS_DIR=./build/reports jenkins-mocha --no-coverage --compilers js:babel-core/register test/**/*.js*",
     "start": "nodemon server.js"
   },
   "repository": {

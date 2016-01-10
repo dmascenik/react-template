@@ -2,6 +2,7 @@ import Radium from 'radium'
 import React from 'react'
 import Avatar from 'material-ui/lib/avatar'
 import FontIcon from 'material-ui/lib/font-icon'
+import history from '../history'
 import IconButton from 'material-ui/lib/icon-button'
 import IconMenu from 'material-ui/lib/menus/icon-menu'
 import MenuItem from 'material-ui/lib/menus/menu-item'
@@ -14,6 +15,17 @@ let Header = class Header extends React.Component {
 
   constructor (props) {
     super(props)
+
+    this.handleSettingsTouchTap = this.handleSettingsTouchTap.bind(this)
+    this.handleHomeTouchTap = this.handleHomeTouchTap.bind(this)
+  }
+
+  handleSettingsTouchTap () {
+    history.pushState(null, '/settings')
+  }
+
+  handleHomeTouchTap () {
+    history.pushState(null, '/')
   }
 
   render () {
@@ -30,7 +42,9 @@ let Header = class Header extends React.Component {
             <MenuItem primaryText="Today" />
             <MenuItem primaryText="Tomorrow" />
           </IconMenu>
-          <IconButton><FontIcon className="material-icons">{'home'}</FontIcon></IconButton>
+          <IconButton onTouchTap={this.handleHomeTouchTap}>
+            <FontIcon className="material-icons">{'home'}</FontIcon>
+          </IconButton>
         </ToolbarGroup>
         <ToolbarGroup float="right"
             lastChild >
@@ -41,7 +55,8 @@ let Header = class Header extends React.Component {
               <FontIcon className="material-icons">{'more_vert'}</FontIcon>
             </IconButton>
           }>
-            <MenuItem primaryText="Settings" />
+            <MenuItem onTouchTap={this.handleSettingsTouchTap}
+                primaryText="Settings" />
             <MenuItem primaryText="Help" />
             <MenuItem primaryText="Sign Out" />
           </IconMenu>

@@ -20,6 +20,13 @@ app.get('/', function (req, res) {
 // Any other static assets like styles.css, too
 app.use(serveStatic(__dirname + '/src/static'));
 
+// All other URLs serve the index page (support for bookmarks
+// to locations within the app)
+app.get('*', function (req, res) {
+  res.sendFile(__dirname + '/src/static/index.html');
+});
+
+
 // Start the webpack dev server on port 9090
 new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
