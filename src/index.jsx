@@ -13,6 +13,7 @@ import history from './history'
 import MasterFrame from './app/MasterFrame.jsx'
 import Home from './app/Home.jsx'
 import Settings from './app/Settings.jsx'
+import ChatControllerView from './app/ChatControllerView.jsx'
 
 // Makes tap events work in Material UI for React pre-1.0
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -36,6 +37,8 @@ ReactDOM.render((
       <IndexRoute component={Home}/>
       <Route component={Settings}
           path="settings" />
+      <Route component={ChatControllerView}
+          path="chat" />
     </Route>
   </Router>
 ), document.getElementById('app'))

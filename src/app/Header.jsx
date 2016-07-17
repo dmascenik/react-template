@@ -18,10 +18,15 @@ let Header = class Header extends React.Component {
 
     this.handleSettingsTouchTap = this.handleSettingsTouchTap.bind(this)
     this.handleHomeTouchTap = this.handleHomeTouchTap.bind(this)
+    this.handleChatTouchTap = this.handleChatTouchTap.bind(this)
   }
 
   handleSettingsTouchTap () {
     history.pushState(null, '/settings')
+  }
+
+  handleChatTouchTap () {
+    history.pushState(null, '/chat')
   }
 
   handleHomeTouchTap () {
@@ -44,6 +49,9 @@ let Header = class Header extends React.Component {
           </IconMenu>
           <IconButton onTouchTap={this.handleHomeTouchTap}>
             <FontIcon className="material-icons">{'home'}</FontIcon>
+          </IconButton>
+          <IconButton onTouchTap={this.handleChatTouchTap}>
+            <FontIcon className="material-icons">{'forum'}</FontIcon>
           </IconButton>
         </ToolbarGroup>
         <ToolbarGroup float="right"
