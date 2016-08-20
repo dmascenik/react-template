@@ -7,9 +7,9 @@
     "eslint": "eslint -c eslint.config src --ext .js,.jsx",
     "eslint-tests": "eslint -c eslint-tests.config test --ext .js,.jsx",
     "compile": "babel src --out-dir build/js",
-    "test": "COVERAGE=true ARTIFACTS_DIR=./build/reports jenkins-mocha --compilers js:babel-core/register test/**/*.js*",
+    "test": "COVERAGE=true ARTIFACTS_DIR=./build/reports jenkins-mocha --compilers js:babel-core/register test/**/*.js* test/**/*.js",
     "check": "istanbul check-coverage",
-    "devtest": "ARTIFACTS_DIR=./build/reports jenkins-mocha --no-coverage --compilers js:babel-core/register test/**/*.js*",
+    "devtest": "ARTIFACTS_DIR=./build/reports jenkins-mocha --no-coverage --compilers js:babel-core/register test/**/*.js* test/**/*.js",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -27,9 +27,11 @@
   },
   "homepage": "https://github.com/dmascenik/react-template#readme",
   "dependencies": {
+    "es6-promise": "^3.0.2",
     "history": "^1.17.0",
     "material-design-icons": "^2.1.3",
     "material-ui": "^0.14.1",
+    "object-assign": "^4.0.1",
     "radium": "^0.14.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
